@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "license": "MIT",
+  "version": "0.0.1",
+  "main": "src/lib.mjs",
+  "types": "src/lib.d.mts",
+  "name": "@evan/concurrency",
+  "description": "concurrency utils",
+  "keywords": ["promise", "concurrency"],
+  "files": ["src", "license", "readme.md"],
+  "homepage": "https://github.com/evanwashere/concurrency#readme",
+  "bugs": { "url": "https://github.com/evanwashere/concurrency/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/evanwashere/concurrency.git" }
+}

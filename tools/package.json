@@ -1,0 +1,9 @@
+{
+  "type": "module",
+
+  "dependencies": {
+    "mitata": "latest",
+    "p-limit": "^6.2.0",
+    "@mitata/counters": "latest"
+  }
+}
