@@ -28,7 +28,7 @@ Creates a new limiter instance.
 Parameters:
 - `n` (number): size of ring buffer
 - `options` (object): optional configuration
-	- `limit` (number, default: 10): maximum number of (ring + escaped) tasks
+	- `limit` (number, default: n): maximum number of (ring + escaped) tasks
 	- `timeout` (null | number, default: null): timeout in ms, after timeout task is escaped to free up ring slot
 	- `threshold` (number, default: 0.75): threshold ratio for switching to escape strategy for slow/timed-out tasks
 
@@ -42,6 +42,17 @@ Adds a task to the ring for execution.
 - `fn`: function that returns a promise
 
 *(note: fn must be async and handle its own errors)*
+
+### Tiny version
+A simplified ring-buffer only implementation is available. This lightweight version is optimized for size (~120 bytes minified) while maintaining great performance for tasks that don't have huge variance in their completion time.
+
+```js
+import { Limiterr } from '@evan/concurrency';
+
+const c = new Limiterr(5);
+
+c(async () => {});
+```
 
 ### Performance
 

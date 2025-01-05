@@ -1,4 +1,14 @@
-export function Limiter(n, { limit = 10, timeout = null, threshold = 3 / 4 } = {}) {
+export function Limiterr(n) {
+  let o = 0;
+  const ring = new Array(n).fill((async _ => _)());
+
+  return $fn => {
+    const offset = o = ++o % ring.length;
+    ring[offset] = ring[offset].then($fn);
+  };
+}
+
+export function Limiter(n, { limit = n, timeout = null, threshold = 3 / 4 } = {}) {
   let o = 0;
   let tasks = 0;
   const token = {};
